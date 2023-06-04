@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package UserServer;
+
+option go_package = "./UserServer";
+
+service UserServer{
+    rpc CreateUser(CreateUserReq)returns(CreateUserResp);
+    rpc GetUser(GetUserReq)returns(GetUserResp);
+}
+
+message CreateUserReq{
+    string Account = 1;
+    string Password = 2;
+}
+
+message CreateUserResp{
+    int64 Code = 1;
+    string Msg = 2;
+}
+
+message GetUserReq{
+    string Account = 1;
+    string Password = 2;
+}
+
+message GetUserResp{
+    int64 Code = 1;
+    string Msg = 2;
+}
